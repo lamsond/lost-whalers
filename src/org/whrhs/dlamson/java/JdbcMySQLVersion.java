@@ -18,10 +18,10 @@ public class JdbcMySQLVersion {
 		
 		String query = "SELECT VERSION()";
 		
-		try {
+		try (
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(query);
+			ResultSet rs = st.executeQuery(query)){
 		
 			if(rs.next()) {
 				System.out.println(rs.getString(1));

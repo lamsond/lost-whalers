@@ -1,4 +1,4 @@
-# lost-whalers
+#lost-whalers
 connecting java with mysql tutorial
 
 ---
@@ -9,7 +9,7 @@ checking statsus mysql: `sudo service mysql status`
 logging in: `mysql -u root -p`  
 
 ---
-### challenges 12/26/19
+##challenges 12/26/19
 
 **getting mysql root account password**  
 this may be due to me having mysql installed previously - thought I erased it with the `apt-get purge` command?  
@@ -20,24 +20,24 @@ the connector I needed was located at `usr/share/maven-repo/mysql`
 I opted not to use maven, but import the `.jar` for the connector  
     
 ---
-### mysql notes
+##mysql notes
 
 creating db: `CREATE DATABASE testdb;`  
-creating user/password: `CREATE USER 'testuser'@'localhost' INDETIFIED BY 'password';`  
+creating user/password: `CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'password';`  
 granting rights: `GRANT ALL ON 'testdb.*' TO 'testuser'@'localhost';`  
 
 ---
-### jdbc notes
+##jdbc notes
 
 Connection instance: `Connection con = DriverManager.getConnection(url, user, password);`  
 Statement instance: `Statement st = con.createStatement();`  
-ResultSet instance: `ResultSet rs = st.execureQuery(query);`  
+ResultSet instance: `ResultSet rs = st.executeQuery(query);`  
 index to next row: `rs.next();`  
 get result from first column: `rs.getString(1);`
 catch: `SQLException`  
 
 ---
-### general java notes
+##general java notes
 
 **try with resources**
 declare resources inside parentheses following `try` keyword.  

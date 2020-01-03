@@ -16,7 +16,7 @@ public class JdbcMySQLVersion {
 		String user = "testuser";
 		String password = "test123";
 		
-		String query = "SELECT VERSION()";
+		String query = "SELECT Name FROM Players;";
 		
 		try (
 			Connection con = DriverManager.getConnection(url, user, password);
